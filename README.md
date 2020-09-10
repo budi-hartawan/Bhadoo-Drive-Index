@@ -1,17 +1,15 @@
 # Google Personal/Shared Drive Index
 
 * Supports Both My and Team/Shared Drives.
-* Upload Function.
-* Search Function based on jQuery.
-* Demo at https://googledri.ve.workers.dev
-* Lite Demo at https://litedri.ve.workers.dev
-* GoIndex Demo is at https://one.driveindex.ga
-* Code that should be deployed is [here](https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index/tree/master/worker/dist) where `worker.js` can be for small number of items and `goindex.js` is advanced and better.
+
+[![Screenshot](https://raw.githubusercontent.com/ParveenBhadooOfficial/Bhadoo-Drive-Index/master/images/beta-ss.PNG)](https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index)
 
 ## How to
 
-* Open https://codedri.ve.workers.dev
-* For Latest Version use https://gencode.ve.workers.dev
+Select One from Below 3 Generators
+* Old and Obsolete - https://oldindexgenerator.driveindex.ga
+* Alpha Version - https://gdindexgenerator.driveindex.ga
+* Beta Version (Latest) - https://bhadooindexgenerator.driveindex.ga
 * If you want to deploy main drive leave the option ROOT as it is.
 * If you want to deploy your Team Drive/Shared Drive/Folder then copy the ID and replace it with ROOT.
 * Eg. if you open [this shared drive](https://drive.google.com/drive/u/0/folders/0AOM2i7MQiuWIUk9PVA) 0AOM2i7MQiuWIUk9PVA is its ID.
@@ -32,5 +30,10 @@
 
 * Source: [maple3142](https://github.com/maple3142/GDIndex)
 * Source: [yanzai](https://github.com/yanzai/goindex)
-* Search Function: [MakItWeb](https://makitweb.com/jquery-search-text-in-the-element-with-contains-selector/)
-* Search Base: [w3Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list)
+* New Design: [Bootstrap](https://getbootstrap.com)
+* Cloudflare: Workers
+
+## Disclaimer
+
+* These Index's are written by someone else, possibly by donva and maple3142.
+* Beta Version is redesigned using Bootstrap from Alpha Version by @ParveenBhadooOfficial.
