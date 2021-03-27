@@ -21,7 +21,7 @@
 
 ## How to
 
-* Current Version `2.0.7`
+* Current Version `2.0.10`
 * Beta Version (Latest) - [generator.driveindex.ga](https://generator.driveindex.ga) (Dark Theme Available)
 * If you want to deploy main drive leave the option ROOT as it is.
 * If you want to deploy your Team Drive/Shared Drive/Folder then copy the ID and replace it with ROOT.
@@ -37,18 +37,38 @@
 * Now paste the code you copied before.
 * Click on Save and Deploy.
 * Done. (May take time for some users due to new account or cache issues)
-* [Watch Video](https://www.youtube.com/watch?v=8WMddzVX1Dw&feature=youtu.be)
+* [Watch Video](https://youtu.be/v3qNwHAWVKs)
 
 ## Basic Config
 
 ````
 "roots": [{
-	"id": "root", // shared drive id or folder id
-	"name": "Cloud Zero", // name for drive
-	"user": "admin", // username for id pass
-	"pass": "admin", // password for id pass (works also if their is no username, keep blank if no auth is needed.
-	"protect_file_link": true // protects the direct links when true.
+    "id": "root", // shared drive id or folder id
+    "name": "Cloud Zero", // name for drive
+    "user": "admin", // username for id pass
+    "pass": "admin", // password for id pass (works also if their is no username, keep blank if no auth is needed.
+    "protect_file_link": true // protects the direct links when true.
 }],
+````
+
+## Multiple ID Config
+
+````
+"roots": [{
+        "id": "root", // shared drive id or folder id
+        "name": "Cloud Zero", // name for drive
+        "user": "admin", // username for id pass
+        "pass": "admin", // password for id pass (works also if their is no username, keep blank if no auth is needed.
+        "protect_file_link": true // protects the direct links when true.
+    },
+    {
+        "id": "root", // shared drive id or folder id
+        "name": "Cloud Zero", // name for drive
+        "user": "admin", // username for id pass
+        "pass": "admin", // password for id pass (works also if their is no username, keep blank if no auth is needed.
+        "protect_file_link": true // protects the direct links when true.
+    }
+],
 ````
 
 ## Brand Customization and Dark Mode
@@ -58,34 +78,57 @@
 * After that each line has its own custom feature. Edit as per your needs.
 * You can remove credit option but we request you not to.
 * See Below code to understand Customization.
+
+
 ````
 const uiConfig = {
-	"theme": "bhadoo_bootstrap", // Change doesn't works
-	"dark_mode": true, // switch between light or dark themes
-	"version": "2.0.7", // don't touch this one. get latest code using generator at https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index
+	"theme": "dark", // switch between themes, default set to dark, select from https://github.com/ParveenBhadooOfficial/Google-Drive-Index#themes
+	"dark_mode": true, // incase you're viewing wrong colors try switching this
+	"version": "2.0.10", // don't touch this one. get latest code using generator at https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index
 	"logo_image": true, // true if you're using image link in next option.
 	"logo_height": "", // only if logo_image is true
 	"logo_width": "100px", // only if logo_image is true
 	"logo_link_name": "https://cdn.jsdelivr.net/gh/jscdn/svg@1.0.3/bhadoo-cloud-logo-white.svg", // if logo is true then link otherwise just text for name
-	"contact_link": "https://t.telegram.ind.in/BhadooDiscussion", // Link to Contact Button on Menu
+	"contact_link": "https://t.telegram.ind.in/BhadooCloud", // Link to Contact Button on Menu
 	"copyright_year": "2050", // year of copyright, can be anything like 2015 - 2020 or just 2020
 	"company_name": "Bhadoo Cloud", // Name next to copyright
 	"company_link": "https://t.telegram.ind.in/BhadooCloud", // link of copyright name
 	"credit": true, // Set this to true to give us credit
 	"display_size": true, // Set this to false to hide display file size
 	"display_time": false, // Set this to false to hide display modified time for folder and files
-	"disable_player": false // Set this to true to hide audio and video players
-};
+        "disable_player": false, // Set this to true to hide audio and video players
+	"poster": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.10/images/poster.jpg", // Video poster URL or see Readme to how to load from Drive
+	"audioposter": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.10/images/music.jpg", // Video poster URL or see Readme to how to load from Drive
+	"captions": "subtitles.srt", // Subtitles Link or file name which is in the folder same as video.
+	"jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index", // If Project is Forked, then enter your Github repo
+	"plyr_io_version": "3.6.4" // Change plyr.io version in future when needed.
+}
 ````
+
+## Themes
+
+* There are 22 Themes from [bootswatch](https://github.com/thomaspark/bootswatch) where `light` is official [Bootstrap](https://getbootstrap.com) Theme and `dark` is darkly from bootswatch.
+* You can check Theme from [bootswatch.com](https://bootswatch.com) before selecting.
+* To Change theme, first generate the code, paste in Cloudflare Workers and then select one theme code from below and paste it in line 66 of worker script.
+
+| Themes    |         |         |         |        |          |
+|-----------|---------|---------|---------|--------|----------|
+| cerulean  | cosmo   | cyborg  | dark    | flatly | journal  |
+| litera    | lumen   | lux     | materia | minty  | pulse    |
+| sandstone | simplex | sketchy | slate   | solar  | spacelab |
+| superhero | united  | yeti    | light   |        |          |
+|           |         |         |         |        |          |        
+
+## Audio and Video
+
+* Poster for Video is added as default.
+* If you wish to keep one poster add image link in Config.
+* You can also set poster name as eg. poster.jpg or screenshot.png where this file should be inside the same folder as the video file is.
 
 ## Search Limitations
 
 * Search only works if you use Shared Drive ID or root.
 * Search won't work or the bar won't appear if you're using Folder ID inside from root or Shared Drive.
-
-## Known Bugs
-
-* Light Mode Text Hover Underline needs to be fixed.
 
 ## Upcoming Changes
 

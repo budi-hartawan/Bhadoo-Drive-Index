@@ -1,5 +1,5 @@
-// Redesigned by t.me/TheFirstSpeedster from https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index which was written by someone else, credits are given on Source Page.
-
+// Redesigned by t.me/TheFirstSpeedster from https://github.com/ParveenBhadooOfficial/Google-Drive-Index which was written by someone else, credits are given on Source Page.
+// v2.0.10
 // Initialize the page
 function init() {
 	document.siteName = $('title').html();
@@ -12,7 +12,7 @@ function init() {
 <div id="content">
 </div>
 <br>
-<footer class="text-muted"> <div class="container"> <p class="float-right"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://github.com/ParveenBhadooOfficial/Bhadoo-Drive-Index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer text-muted"> <div class="container"> <p class="float-right"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://github.com/ParveenBhadooOfficial/Google-Drive-Index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
 	$('body').html(html);
 }
@@ -85,7 +85,7 @@ function nav(path) {
 	var model = window.MODEL;
 	var html = "";
 	var cur = window.current_drive_order || 0;
-	html += `<nav class="navbar navbar-expand-lg ${UI.dark_mode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}">
+	html += `<nav class="navbar navbar-expand-lg fixed-top ${UI.dark_mode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}">
   <a class="navbar-brand" href="/${cur}:/">${UI.logo_image ? '<img border="0" alt="'+UI.company_name+'" src="'+UI.logo_link_name+'" height="'+UI.height+'" width="'+UI.logo_width+'">' : UI.logo_link_name}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -123,7 +123,7 @@ function nav(path) {
 				var n = arr[i];
 				n = decodeURI(n);
 				p += n + '/';
-				if (p.endsWith(".mp3/") === true || p.endsWith(".mp4/") === true || p.endsWith(".mkv/") === true || p.endsWith(".flac/") === true || p.endsWith(".m4a/") === true || p.endsWith(".pdf/") === true || p.endsWith(".jpg/") === true || p.endsWith(".png/") === true || p.endsWith(".jpeg/") === true || p.endsWith(".gif/") === true || p.endsWith(".md/") === true || p.endsWith(".zip/") === true || p.endsWith(".rar/") === true || p.endsWith(".exe/") === true  || p.endsWith(".tar/") === true) {
+				if (p.endsWith(".mp3/") === true || p.endsWith(".mp4/") === true || p.endsWith(".mkv/") === true || p.endsWith(".flac/") === true || p.endsWith(".m4a/") === true || p.endsWith(".pdf/") === true || p.endsWith(".jpg/") === true || p.endsWith(".png/") === true || p.endsWith(".jpeg/") === true || p.endsWith(".gif/") === true || p.endsWith(".md/") === true || p.endsWith(".zip/") === true || p.endsWith(".rar/") === true || p.endsWith(".exe/") === true  || p.endsWith(".tar/") === true || p.endsWith(".txt/") === true) {
 				    p = p.slice(0, -1);
 				}
 				if (n === '') {
@@ -362,7 +362,7 @@ function append_files_to_list(path, files) {
 				pn += "?a=view";
 				c += " view";
 			}
-			html += `<div class="list-group-item ${UI.dark_mode ? 'list-group-item-action' : 'btn-outline-secondary'}"><a class="list-group-item-action" href="${pn}"><svg width="1.5em" height="1.5em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#50e6ff" d="M39,16v25c0,1.105-0.895,2-2,2H11c-1.105,0-2-0.895-2-2V7c0-1.105,0.895-2,2-2h17L39,16z"></path><linearGradient id="F8F33TU9HxDNWNbQYRyY3a" x1="28.529" x2="33.6" y1="15.472" y2="10.4" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3079d6"></stop><stop offset="1" stop-color="#297cd2"></stop></linearGradient><path fill="url(#F8F33TU9HxDNWNbQYRyY3a)" d="M28,5v9c0,1.105,0.895,2,2,2h9L28,5z"></path></svg> ${item.name}</a><a href="${p}"><img class="float-right" src="https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Bhadoo-Drive-Index@2.0.7/images/download-file.svg" width="25px"></a><span class="badge-info badge-pill float-right csize"> ${item['size']}</span><span class="badge-primary badge-pill float-right cmtime">${item['modifiedTime']}</span></div>`;
+			html += `<div class="list-group-item ${UI.dark_mode ? 'list-group-item-action' : 'btn-outline-secondary'}"><a class="list-group-item-action" href="${pn}"><svg width="1.5em" height="1.5em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#50e6ff" d="M39,16v25c0,1.105-0.895,2-2,2H11c-1.105,0-2-0.895-2-2V7c0-1.105,0.895-2,2-2h17L39,16z"></path><linearGradient id="F8F33TU9HxDNWNbQYRyY3a" x1="28.529" x2="33.6" y1="15.472" y2="10.4" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3079d6"></stop><stop offset="1" stop-color="#297cd2"></stop></linearGradient><path fill="url(#F8F33TU9HxDNWNbQYRyY3a)" d="M28,5v9c0,1.105,0.895,2,2,2h9L28,5z"></path></svg> ${item.name}</a><a href="${p}"><img class="float-right" src="https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.7/images/download-file.svg" width="25px"></a><span class="badge-info badge-pill float-right csize"> ${item['size']}</span><span class="badge-primary badge-pill float-right cmtime">${item['modifiedTime']}</span></div>`;
 		}
 	}
 
@@ -643,11 +643,14 @@ function file(path) {
 	if ("|bmp|jpg|jpeg|png|gif|".indexOf(`|${ext}|`) >= 0) {
 		return file_image(path);
 	}
+	
+	if ('pdf' === ext) {
+	    return file_pdf(path);
+    }
+    
 	else {
 		return file_others(path);
 	}
-
-	if ('pdf' === ext) return file_pdf(path);
 }
 
 // Document display |zip|.exe/others direct downloads
@@ -666,7 +669,7 @@ function file_others(path) {
 <div class="card-body">
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
 </div>
-<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a></p><br>`;
+<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>`;
 	$('#content').html(content);
 }
 
@@ -692,9 +695,13 @@ function file_code(path) {
 <div class="card">
 <div class="card-body">
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
-<code id="editor" class="card-text"></code>
+<div class="mdui-container">
+<pre id="editor" ></pre>
 </div>
-<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a></p><br>`;
+</div>
+<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>
+<script src="https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.8/js/ace/1.4.7/ace.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ParveenBhadooOfficial/Google-Drive-Index@2.0.8/js/ace/1.4.7/ext-language_tools.js"></script>`;
 	$('#content').html(content);
 
 	$.get(path, function (data) {
@@ -706,27 +713,25 @@ function file_code(path) {
 	});
 }
 
-function copyToClipboard(str) {
-	const $temp = $("<input>");
-	$("body").append($temp);
-	$temp.val(str).select();
-	document.execCommand("copy");
-	$temp.remove();
-}
-
 // Document display video |mp4|webm|avi|
 function file_video(path) {
 	const url = window.location.origin + path;
 	const content = `
   <div class="container"><br>
   <div class="card">
-  <div class="card-body text-center">
+  <div class="text-center">
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
-  <video width="100%" height="100%" id="bPlayer" controls><source type="video/mp4" src="${url}"/></video>
+	<video id="vplayer" width="100%" height="100%" playsinline controls data-poster="${UI.poster}">
+	  <source src="${url}" type="video/mp4" />
+	  <source src="${url}" type="video/webm" />
+	  <track kind="captions" label="English Captions" src="${UI.captions}" srclang="en" default />
+	</video>
   </div>
-	${UI.disable_player ? '<style>#mep_0{display:none;}</style>' : ''}
-  <script type="text/javascript">$('#bPlayer').mediaelementplayer();</script>
-  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a></p><br>
+	${UI.disable_player ? '<style>.plyr{display:none;}</style>' : ''}
+  <script>
+   const player = new Plyr('#vplayer');
+  </script></br>
+	<p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>
   </div>
   </div>
   `;
@@ -738,25 +743,28 @@ function file_audio(path) {
 	var url = window.location.origin + path;
 	var content = `
   <div class="container"><br>
-  <div class="card">
+  <div class="card" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
   <div class="card-body text-center">
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
-  <audio id="bPlayer" width="100%" controls>
+  <br><img draggable="false" src="${UI.audioposter}" width="100%" /><br>
+  <audio id="vplayer" width="100%" playsinline controls>
     <source src="${url}" type="audio/ogg">
     <source src="${url}" type="audio/mpeg">
   Your browser does not support the audio element.
   </audio>
   </div>
-	${UI.disable_player ? '<style>#mep_0{display:none;}</style>' : ''}
-  <script type="text/javascript">$('#bPlayer').mediaelementplayer();</script>
-  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a></p><br>
+	${UI.disable_player ? '<style>.plyr{display:none;}</style>' : ''}
+  <script>
+   const player = new Plyr('#vplayer');
+  </script></br>
+  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>
   </div>
   </div>
   `;
 	$('#content').html(content);
 }
 
-// Document display pdf  pdf
+// Document display pdf
 function file_pdf(path) {
 	const url = window.location.origin + path;
 	const inline_url = `${url}?inline=true`
@@ -768,13 +776,11 @@ function file_pdf(path) {
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
   <object data="${inline_url}" type="application/pdf" name="${file_name}" style="width:100%;height:94vh;"><embed src="${inline_url}" type="application/pdf"/></object>
   </div>
-  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a></p><br>
+  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>
   </div>
   </div>
   `;
-	$('#content').removeClass('mdui-container').addClass('mdui-container-fluid').css({
-		padding: 0
-	}).html(content);
+	$('#content').html(content);
 }
 
 // image display
@@ -812,7 +818,7 @@ function file_image(path) {
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
   <img src="${url}" width="50%">
   </div>
-  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a></p><br>
+  <p class="card-text text-center"><a href="${url}" class="btn btn-primary">Download</a><button onclick="copyFunction()" class="btn btn-success">Copy</button></p><br>
   </div>
   </div>
     `;
@@ -927,3 +933,12 @@ $(function () {
 
 	render(path);
 });
+
+// Copy to Clipboard for Direct Links, This will be modified soon with other UI
+ function copyFunction() {
+    var copyText = document.getElementById("dlurl");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied Link: " + copyText.value);
+  }
